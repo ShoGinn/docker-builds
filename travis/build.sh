@@ -36,13 +36,5 @@ for ARCH in $ARCHITECTURES
             --local dockerfile=. \
             --local context=. \
             --output type=image,name=docker.io/${DOCKER_USER}/${DOCKER_NAME}:${DOCKER_TAG}-${ARCH},push=true
-            --opt "build-arg:BASE=$BASE" \
-            --opt "build-arg:VCS_REF=$(git rev-parse --short HEAD)" \
-            --opt "build-arg:VCS_URL=$(git config --get remote.origin.url)" \
-            --opt "build-arg:BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
-            --opt "build-arg:MAINTAINER=$MAINTAINER" \
-            --opt "build-arg:NAME=$NAME" \
-            --opt "build-arg:DESCRIPTION=$DESCRIPTION" \
-            --opt "build-arg:URL=$URL"
 
 done
