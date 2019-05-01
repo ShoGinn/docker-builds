@@ -19,7 +19,6 @@ for ARCH in $ARCHITECTURES; do
 	org.label-schema.maintainer="${DOCKER_MAINTAINER}" \
 	org.label-schema.name="${DOCKER_NAME}" \
 	org.label-schema.url="${DOCKER_URL}" \
-	org.label-schema.version="${DOCKER_VERSION}" \
 	org.label-schema.schema-version="${SCHEMA_VERSION}" \
 	org.label-schema.vcs-ref="${VCS_REF}" \
 	org.label-schema.vcs-url="${VCS_URL}"
