@@ -5,7 +5,7 @@ set -u
 # Architectures to build
 ARCHITECTURES="arm arm64 amd64"
 
-for ARCH in $ARCHITECTURES
+for ARCH in $ARCHITECTURES; do
 
 # Set dockerfile directory/filename
       DOCKERFILE="dockerfiles/${DOCKER_NAME}_${DOCKER_TAG}_${ARCH}.dockerfile"
