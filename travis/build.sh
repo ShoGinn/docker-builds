@@ -9,6 +9,8 @@ for ARCH in $ARCHITECTURES; do
 
 	# Set dockerfile directory/filename
 	DOCKERFILE="dockerfiles/${DOCKER_NAME}_${DOCKER_TAG}_${ARCH}.dockerfile"
+	[[ ! -f ${DOCKERFILE} ]] && DOCKERFILE="dockerfiles/${DOCKER_NAME}_${DOCKER_TAG}.dockerfile" 
+	echo "Using ${DOCKERFILE}"
 
 	# Append labels to dockerfile
 	cat <<- EOF >> ${DOCKERFILE}
