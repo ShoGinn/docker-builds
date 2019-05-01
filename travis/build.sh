@@ -36,6 +36,6 @@ for ARCH in $ARCHITECTURES; do
 		--opt filename=${DOCKERFILE} \
 		--local dockerfile=. \
 		--local context=. \
-		--output type=image,name=docker.io/${DOCKER_USERNAME}/${DOCKER_NAME}:${DOCKER_TAG}-${ARCH},push=true
+		--output type=image,name=docker.io/${DOCKER_USER}/${DOCKER_NAME}:${DOCKER_TAG}-${ARCH},push=true
 
 done
