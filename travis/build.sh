@@ -3,7 +3,7 @@
 set -u
 
 # Architectures to build
-ARCHITECTURES="arm arm64 amd64"
+ARCHITECTURES=${ARCHITECTURES:-'arm arm64 amd64'}
 
 for ARCH in $ARCHITECTURES; do
 

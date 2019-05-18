@@ -6,7 +6,7 @@ set -euo pipefail
 export DOCKER_CLI_EXPERIMENTAL="enabled"
 
 # Architectures to build
-ARCHITECTURES="arm arm64 amd64"
+ARCHITECTURES=${ARCHITECTURES:-'arm arm64 amd64'}
 
 for ARCH in $ARCHITECTURES; do
 
