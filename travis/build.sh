@@ -12,9 +12,11 @@ for ARCH in $ARCHITECTURES; do
 	[[ ! -f ${DOCKERFILE} ]] && DOCKERFILE="dockerfiles/${DOCKER_NAME}_${DOCKER_TAG}.dockerfile" 
 	echo "Using ${DOCKERFILE}"
 	
+	# Adds a blank line to the end of the Dockerfile
+	[ -n "$(tail -c1 ${DOCKERFILE})" ] && echo >> ${DOCKERFILE}
+
 	# Append labels to dockerfile
 	cat <<- EOF >> ${DOCKERFILE}
-	\n \
 	LABEL \
 	org.label-schema.build-date="${BUILD_DATE}" \
 	org.label-schema.build-number="${BUILD_NUMBER}" \
