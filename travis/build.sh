@@ -14,6 +14,7 @@ for ARCH in $ARCHITECTURES; do
 	
 	# Append labels to dockerfile
 	cat <<- EOF >> ${DOCKERFILE}
+	\n \
 	LABEL \
 	org.label-schema.build-date="${BUILD_DATE}" \
 	org.label-schema.build-number="${BUILD_NUMBER}" \
