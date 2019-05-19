@@ -28,7 +28,6 @@ for ARCH in $ARCHITECTURES; do
 	org.label-schema.vcs-ref="${VCS_REF}" \
 	org.label-schema.vcs-url="${VCS_URL}"
 	EOF
-	cat ${DOCKERFILE}
 	# Login into docker
 	echo ${DOCKER_PASS} | docker login --username ${DOCKER_USER} --password-stdin
 
