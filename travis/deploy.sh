@@ -37,13 +37,13 @@ docker manifest push ${DOCKER_USER}/${DOCKER_NAME}:${DOCKER_TAG}
 docker manifest inspect ${DOCKER_USER}/${DOCKER_NAME}:${DOCKER_TAG}
 
 # Push the Readme File
-local README_NAME="README.md"
-local token=$(curl -s -X POST \
+README_NAME="README.md"
+token=$(curl -s -X POST \
 -H "Content-Type: application/json" \
 -d '{"username": "'"${DOCKER_USER}"'", "password": "'"${DOCKER_PASS}"'"}' \
 https://hub.docker.com/v2/users/login/ | jq -r .token)
 
-local code=$(jq -n --arg msg "$(<${README_NAME})" \
+code=$(jq -n --arg msg "$(<${README_NAME})" \
 '{"registry":"registry-1.docker.io","full_description": $msg }' | \
     curl -s -o /dev/null  -L -w "%{http_code}" \
        https://hub.docker.com/v2/repositories/"${DOCKER_USER}"/"${DOCKER_NAME}"/ \
