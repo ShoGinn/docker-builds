@@ -13,6 +13,11 @@ cat <<'EOF' > /etc/docker/daemon.json
 }
 EOF
 
+mkdir $HOME/.docker
+touch $HOME/.docker/config.json
+echo '{"experimental":"enabled"}' | sudo tee $HOME/.docker/config.json
+sudo service docker restart
+
 # Add docker repository
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
