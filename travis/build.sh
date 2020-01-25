@@ -8,6 +8,7 @@ DOCKERFILE="dockerfiles/${DOCKER_NAME}_${DOCKER_TAG}.dockerfile"
 echo "Using ${DOCKERFILE}"
 
 ARCHITECTURES=${ARCHITECTURES:-'linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6'}
+
 # Adds a blank line to the end of the Dockerfile
 [ -n "$(tail -c1 ${DOCKERFILE})" ] && echo >> ${DOCKERFILE}
 
