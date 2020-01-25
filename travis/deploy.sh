@@ -2,6 +2,10 @@
 
 set -euo pipefail
 
+# Deploy
+
+docker buildx build --file ${DOCKERFILE} --platform ${ARCHITECTURES} -t ${DOCKER_USER}/${DOCKER_NAME}:${TRAVIS_COMMIT} -t ${DOCKER_USER}/${DOCKER_NAME}:${DOCKER_TAG} --push .
+
 # Push the Readme File
 README_NAME="README.md"
 token=$(curl -s -X POST \
