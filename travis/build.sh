@@ -2,8 +2,6 @@
 
 set -ux
 
-source .travis.env
-
 export DOCKER_CLI_EXPERIMENTAL="enabled"
 
 DOCKERFILE="dockerfiles/${DOCKER_NAME}_${DOCKER_TAG}.dockerfile"
@@ -28,7 +26,7 @@ org.label-schema.vcs-ref="${VCS_REF}" \
 org.label-schema.vcs-url="${VCS_URL}"
 EOF
 # Login into docker
-echo ${DOCKER_PASS} | docker login --username ${DOCKER_USER} --password-stdin
+echo ${DOCKER_PASS} | sudo docker login --username ${DOCKER_USER} --password-stdin
 
 sudo docker run --rm --privileged docker/binfmt:66f9012c56a8316f9244ffd7622d7c21c1f6f28d
 sudo docker buildx create --name multi

@@ -3,7 +3,6 @@
 set -euo pipefail
 
 # Setup
-source .travis.env
 
 export DOCKER_CLI_EXPERIMENTAL="enabled"
 
