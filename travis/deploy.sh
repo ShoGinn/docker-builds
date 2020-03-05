@@ -12,4 +12,4 @@ ARCHITECTURES=${ARCHITECTURES:-'linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v
 
 # Deploy
 
-docker buildx build --file ${DOCKERFILE} --platform ${ARCHITECTURES} -t ${DOCKER_USER}/${DOCKER_NAME}:${TRAVIS_COMMIT} -t ${DOCKER_USER}/${DOCKER_NAME}:${DOCKER_TAG} --push .
+sudo docker buildx build --file ${DOCKERFILE} --platform ${ARCHITECTURES} -t ${DOCKER_USER}/${DOCKER_NAME}:${TRAVIS_COMMIT} -t ${DOCKER_USER}/${DOCKER_NAME}:${DOCKER_TAG} --push .
