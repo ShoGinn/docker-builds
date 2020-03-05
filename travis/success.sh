@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source .travis.env
+
 # Push the Readme File
 README_NAME="README.md"
 token=$(curl -s -X POST \

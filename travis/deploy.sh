@@ -3,6 +3,8 @@
 set -euo pipefail
 
 # Setup
+source .travis.env
+
 export DOCKER_CLI_EXPERIMENTAL="enabled"
 
 DOCKERFILE="dockerfiles/${DOCKER_NAME}_${DOCKER_TAG}.dockerfile"
