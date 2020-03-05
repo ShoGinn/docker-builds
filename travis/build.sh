@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -u
+set -ux
 
 export DOCKER_CLI_EXPERIMENTAL="enabled"
 
