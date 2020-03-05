@@ -16,7 +16,7 @@ ARCHITECTURES=${ARCHITECTURES:-'linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v
 cat <<-EOF >>${DOCKERFILE}
 LABEL \
 org.label-schema.build-date="${BUILD_DATE}" \
-org.label-schema.build-number="${BUILD_NUMBER}" \
+org.label-schema.build-number="${TRAVIS_BUILD_NUMBER}" \
 org.label-schema.description="${DOCKER_DESCRIPTION}" \
 org.label-schema.maintainer="${DOCKER_MAINTAINER}" \
 org.label-schema.name="${DOCKER_NAME}" \

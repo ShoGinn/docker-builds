@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Push the Readme File
 README_NAME="README.md"
 token=$(curl -s -X POST \
