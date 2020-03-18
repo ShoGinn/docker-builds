@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+set -o errexit # Exit on most errors (see the manual)
+#set -o errtrace # Make sure any error trap is inherited
+set -o nounset  # Disallow expansion of unset variables
+set -o pipefail # Use last non-zero exit code in a pipeline
+set -o xtrace   # Trace the execution of the script (debug)
+
 # Push the Readme File
 README_NAME="README.md"
+
 token=$(curl -s -X POST \
     -H "Content-Type: application/json" \
     -d '{"username": "'"${DOCKER_USER}"'", "password": "'"${DOCKER_PASS}"'"}' \

@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -o errexit # Exit on most errors (see the manual)
+#set -o errtrace # Make sure any error trap is inherited
+set -o nounset  # Disallow expansion of unset variables
+set -o pipefail # Use last non-zero exit code in a pipeline
+set -o xtrace   # Trace the execution of the script (debug)
 
 # Setup
 
@@ -13,4 +17,4 @@ ARCHITECTURES=${ARCHITECTURES:-'linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v
 
 # Deploy
 
-sudo docker buildx build --file ${DOCKERFILE} --platform ${ARCHITECTURES} -t ${DOCKER_USER}/${DOCKER_NAME}:${TRAVIS_COMMIT} -t ${DOCKER_USER}/${DOCKER_NAME}:${DOCKER_TAG} --push .
+sudo docker buildx build --file "${DOCKERFILE}" --platform "${ARCHITECTURES}" -t "${DOCKER_USER}/${DOCKER_NAME}:${TRAVIS_COMMIT}" -t "${DOCKER_USER}/${DOCKER_NAME}:${DOCKER_TAG}" --push .
