@@ -41,7 +41,7 @@ sudo docker buildx create --name multi
 sudo docker buildx use multi
 sudo docker buildx inspect --bootstrap
 
-udo docker buildx build \
+sudo docker buildx build \
     --file "${DOCKERFILE}" \
     --platform "${ARCHITECTURES}" \
     -t "${DOCKER_USER}/${DOCKER_NAME}:${TRAVIS_COMMIT}" \
